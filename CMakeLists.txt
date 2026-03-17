@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.24)
 set(CMAKE_CXX_STANDARD 23)
-set(EXE_NAME EmptyApp)
+set(EXE_NAME SDLPhysics)
 project(${EXE_NAME})
 
 add_subdirectory(SDL-Engine)
