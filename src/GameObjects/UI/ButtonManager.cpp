@@ -1,5 +1,5 @@
 ﻿#include "GameObjects/UI/ButtonManager.h"
-#include "Assets/Components/Transform.h"
+#include "Components/Transform.h"
 #include "Core/CoreSystems/InputSystem.h"
 #include "GameObjects/UI/Button.h"
 
@@ -61,7 +61,7 @@ void App::GameObjects::ButtonManager::RefreshButtons()
 		auto button = m_buttonList[i];
 		if (button != nullptr)
 		{
-			auto buttonTransform = button->GetComponent<Assets::Components::Transform>();
+			auto buttonTransform = button->GetComponent<Components::Transform>();
 			if (buttonTransform != nullptr)
 			{
 				buttonTransform->LocalPosition = m_startingPositionForButtonList + glm::vec2(0.0f, -i * m_spacing);

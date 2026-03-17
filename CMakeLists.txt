@@ -12,7 +12,9 @@ add_executable(
             ${CMAKE_CURRENT_SOURCE_DIR}/src/GameObjects/UI/Button.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/src/GameObjects/UI/ButtonManager.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/src/GameObjects/UI/UIText.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/src/GameScenes/EmptyGameScene.cpp)
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/GameScenes/EmptyGameScene.cpp
+        "include/GameObjects/ParticleEmitterGameObject.h"
+        src/GameObjects/ParticleEmitterGameObject.cpp)
 
 set_target_properties(
         ${EXE_NAME} PROPERTIES

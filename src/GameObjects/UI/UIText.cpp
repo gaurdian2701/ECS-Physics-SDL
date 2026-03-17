@@ -1,21 +1,21 @@
 ﻿#include "GameObjects/UI/UIText.h"
-#include "Assets/Components/Transform.h"
-#include "Assets/Components/UITexture.h"
+#include "Components/Transform.h"
+#include "Components/UITexture.h"
 
 const inline std::string TEXT_FONT_PATH = "fonts/font_Arcade.ttf";
 
 void App::GameObjects::UIText::AddComponentsBeforeStartup()
 {
-	AddComponent<Assets::Components::Transform>();
-	AddComponent<Assets::Components::UITexture>();
+	AddComponent<Components::Transform>();
+	AddComponent<Components::UITexture>();
 }
 
 void App::GameObjects::UIText::Start()
 {
-	auto transform = GetComponent<Assets::Components::Transform>();
+	auto transform = GetComponent<Components::Transform>();
 	transform->LocalScale = glm::vec2(100.0f, 50.0f);
 
-	auto uiTexture = GetComponent<Assets::Components::UITexture>();
+	auto uiTexture = GetComponent<Components::UITexture>();
 	uiTexture->TextFont = GetSceneReference().GetResourceManager().TryLoadAndGetFont(
 		TEXT_FONT_PATH, 24);
 
@@ -26,7 +26,7 @@ void App::GameObjects::UIText::Start()
 
 void App::GameObjects::UIText::SetFont(const char *pathToFont, float fontSize)
 {
-	if (auto uiTexture = GetComponent<Assets::Components::UITexture>())
+	if (auto uiTexture = GetComponent<Components::UITexture>())
 	{
 		uiTexture->TextFont = GetSceneReference().GetResourceManager().TryLoadAndGetFont(
 			pathToFont, fontSize);
@@ -35,7 +35,7 @@ void App::GameObjects::UIText::SetFont(const char *pathToFont, float fontSize)
 
 void App::GameObjects::UIText::SetText(const std::string &text)
 {
-	if (auto uiTexture = GetComponent<Assets::Components::UITexture>())
+	if (auto uiTexture = GetComponent<Components::UITexture>())
 	{
 		uiTexture->SetFontText(text, std::forward<SDL_Color>(m_color));
 	}
