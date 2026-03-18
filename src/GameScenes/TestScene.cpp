@@ -8,6 +8,7 @@ void App::GameScenes::TestScene::CreateGameObjects()
     AddGameObject<SDLPhysicsApp::GameObjects::BasicSquare>();
     AddGameObject<SDLPhysicsApp::GameObjects::BasicSquare>();
     AddGameObject<SDLPhysicsApp::GameObjects::BasicCircle>();
+    AddGameObject<SDLPhysicsApp::GameObjects::BasicCircle>();
 }
 
 void App::GameScenes::TestScene::InitializeGameObjectReferences()
