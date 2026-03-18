@@ -1,13 +1,13 @@
 ﻿#pragma once
 #include "Scene/GameObject.h"
 
-namespace EmptyApp::GameObjects
+namespace SDLPhysicsApp::GameObjects
 {
-    class ParticleEmitterGameObject : public Scene::GameObject
+    class BasicSquare : public Scene::GameObject
     {
     public:
-        ParticleEmitterGameObject() = default;
-        ~ParticleEmitterGameObject() override = default;
+        BasicSquare() = default;
+        ~BasicSquare() override = default;
 
         void AddComponentsBeforeStartup() override;
         void Start() override;

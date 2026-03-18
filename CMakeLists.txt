@@ -8,13 +8,15 @@ add_subdirectory(SDL-Engine)
 add_executable(
         ${EXE_NAME}
             ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/src/EmptyApp.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/PhysicsApp.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/src/GameObjects/UI/Button.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/src/GameObjects/UI/ButtonManager.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/src/GameObjects/UI/UIText.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/src/GameScenes/EmptyGameScene.cpp
-        "include/GameObjects/ParticleEmitterGameObject.h"
-        src/GameObjects/ParticleEmitterGameObject.cpp)
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/GameScenes/TestScene.cpp
+        "include/GameObjects/BasicSquare.h"
+        src/GameObjects/BasicSquare.cpp
+        include/GameObjects/BasicCircle.h
+        src/GameObjects/BasicCircle.cpp)
 
 set_target_properties(
         ${EXE_NAME} PROPERTIES

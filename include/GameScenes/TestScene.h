@@ -3,11 +3,11 @@
 
 namespace App::GameScenes
 {
-    class EmptyGameScene : public Core::GameScene
+    class TestScene : public Core::GameScene
     {
     public:
-        explicit EmptyGameScene(int maxGameObjects) : GameScene(maxGameObjects) {}
-        ~EmptyGameScene() override = default;
+        explicit TestScene(int maxGameObjects) : GameScene(maxGameObjects) {}
+        ~TestScene() override = default;
 
         void CreateGameObjects() override;
 

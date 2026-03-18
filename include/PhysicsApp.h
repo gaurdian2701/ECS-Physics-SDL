@@ -6,11 +6,11 @@ namespace Core
     class GameScene;
 }
 
-class EmptyApp : public Application
+class PhysicsApp : public Application
 {
 public:
-    EmptyApp() = default;
-    ~EmptyApp() override = default;
+    PhysicsApp() = default;
+    ~PhysicsApp() override = default;
 
     void BeginApplication() override;
     void UpdateApplication(float deltaTime) override;
@@ -26,6 +26,6 @@ private:
 
 inline Application* GetApplicationInstance()
 {
-    static EmptyApp app;
+    static PhysicsApp app;
     return &app;
 }
