@@ -1,5 +1,5 @@
 ﻿#include "GameObjects/BasicCircle.h"
-#include "Components/AABB2D.h"
+#include "Components/BoxCollider2D.h"
 #include "Components/CircleCollider2D.h"
 #include "Components/Renderer2D.h"
 #include "Components/Transform.h"
@@ -17,8 +17,8 @@ void SDLPhysicsApp::GameObjects::BasicCircle::AddComponentsBeforeStartup()
 void SDLPhysicsApp::GameObjects::BasicCircle::Start()
 {
     auto transform = GetComponent<Components::Transform>();
-    transform->LocalPosition = glm::vec2(20.0f, 0.0f);
-    transform->LocalScale = glm::vec2(25.0f);
+    transform->Position = glm::vec2(20.0f, 0.0f);
+    transform->Scale = glm::vec2(25.0f);
 
     auto renderer = GetComponent<Components::Renderer2D>();
     renderer->Color = SDL_FColor{50, 130, 240, 255};
@@ -26,7 +26,7 @@ void SDLPhysicsApp::GameObjects::BasicCircle::Start()
     CIRCLE_TEXTURE_FILEPATH);
 
     auto circleCollider = GetComponent<Components::CircleCollider2D>();
-    circleCollider->Radius = transform->LocalScale.x * 0.6f;
+    circleCollider->Radius = transform->Scale.x * 0.6f;
 
 #ifdef _DEBUG
     m_name = "Circle";

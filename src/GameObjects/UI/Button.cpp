@@ -15,7 +15,7 @@ void App::GameObjects::Button::AddComponentsBeforeStartup()
 void App::GameObjects::Button::Start()
 {
 	auto transform = GetComponent<Components::Transform>();
-	transform->LocalScale = glm::vec2(100.0f, 50.0f);
+	transform->Scale = glm::vec2(100.0f, 50.0f);
 
 	auto renderer = GetComponent<Components::Renderer2D>();
 	renderer->RenderTexture = GetSceneReference().GetResourceManager().TryLoadAndGetTexture(

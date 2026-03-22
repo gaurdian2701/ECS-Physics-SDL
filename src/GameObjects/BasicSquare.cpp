@@ -1,5 +1,5 @@
 ﻿#include "GameObjects/BasicSquare.h"
-#include "Components/AABB2D.h"
+#include "Components/BoxCollider2D.h"
 #include "Components/ParticleEmitter.h"
 #include "Components/Renderer2D.h"
 #include "Components/Transform.h"
@@ -10,16 +10,20 @@ void SDLPhysicsApp::GameObjects::BasicSquare::AddComponentsBeforeStartup()
 {
     AddComponent<Components::Transform>();
     AddComponent<Components::Renderer2D>();
-    AddComponent<Components::AABB2D>();
+    AddComponent<Components::BoxCollider2D>();
 }
 
 void SDLPhysicsApp::GameObjects::BasicSquare::Start()
 {
     auto transform = GetComponent<Components::Transform>();
-    transform->LocalScale = glm::vec2(25.0f);
+    transform->Scale = glm::vec2(25.0f);
+    transform->Rotation = 3.0f;
 
-    auto aabb = GetComponent<Components::AABB2D>();
-    aabb->HalfExtents = glm::vec2(transform->LocalScale * 0.6f);
+    auto box = GetComponent<Components::BoxCollider2D>();
+    box->Initialize(transform->Position,
+        glm::vec2(transform->Scale * 0.6f),
+        0.0f);
+
 
     auto renderer = GetComponent<Components::Renderer2D>();
     renderer->Color = SDL_FColor{50, 130, 240, 255};
@@ -33,7 +37,6 @@ void SDLPhysicsApp::GameObjects::BasicSquare::Start()
 
 void SDLPhysicsApp::GameObjects::BasicSquare::Update(const float deltaTime)
 {
-
 }
 
 

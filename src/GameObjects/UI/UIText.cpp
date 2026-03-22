@@ -13,7 +13,7 @@ void App::GameObjects::UIText::AddComponentsBeforeStartup()
 void App::GameObjects::UIText::Start()
 {
 	auto transform = GetComponent<Components::Transform>();
-	transform->LocalScale = glm::vec2(100.0f, 50.0f);
+	transform->Scale = glm::vec2(100.0f, 50.0f);
 
 	auto uiTexture = GetComponent<Components::UITexture>();
 	uiTexture->TextFont = GetSceneReference().GetResourceManager().TryLoadAndGetFont(

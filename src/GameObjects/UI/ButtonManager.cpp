@@ -64,7 +64,7 @@ void App::GameObjects::ButtonManager::RefreshButtons()
 			auto buttonTransform = button->GetComponent<Components::Transform>();
 			if (buttonTransform != nullptr)
 			{
-				buttonTransform->LocalPosition = m_startingPositionForButtonList + glm::vec2(0.0f, -i * m_spacing);
+				buttonTransform->Position = m_startingPositionForButtonList + glm::vec2(0.0f, -i * m_spacing);
 			}
 		}
 	}
