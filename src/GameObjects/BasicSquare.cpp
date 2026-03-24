@@ -16,7 +16,7 @@ void SDLPhysicsApp::GameObjects::BasicSquare::AddComponentsBeforeStartup()
 void SDLPhysicsApp::GameObjects::BasicSquare::Start()
 {
     auto transform = GetComponent<Components::Transform>();
-    transform->Scale = glm::vec2(25.0f);
+    transform->Scale = glm::vec2(50.0f);
     transform->Rotation = 3.0f;
 
     auto box = GetComponent<Components::BoxCollider2D>();
@@ -26,9 +26,9 @@ void SDLPhysicsApp::GameObjects::BasicSquare::Start()
 
 
     auto renderer = GetComponent<Components::Renderer2D>();
-    renderer->Color = SDL_FColor{50, 130, 240, 255};
-    renderer->RenderTexture = GetSceneReference().GetResourceManager().TryLoadAndGetTexture(
-        SQUARE_TEXTURE_FILEPATH);
+    renderer->Color = SDL_FColor{50, 130, 240, 100};
+    // renderer->RenderTexture = GetSceneReference().GetResourceManager().TryLoadAndGetTexture(
+    //     SQUARE_TEXTURE_FILEPATH);
 
 #ifdef _DEBUG
     m_name = "Square";
