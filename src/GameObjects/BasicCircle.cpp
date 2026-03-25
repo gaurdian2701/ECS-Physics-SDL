@@ -2,6 +2,7 @@
 #include "Components/BoxCollider2D.h"
 #include "Components/CircleCollider2D.h"
 #include "Components/Renderer2D.h"
+#include "Components/Rigidbody2D.h"
 #include "Components/Transform.h"
 
 
@@ -12,6 +13,7 @@ void SDLPhysicsApp::GameObjects::BasicCircle::AddComponentsBeforeStartup()
     AddComponent<Components::Transform>();
     AddComponent<Components::Renderer2D>();
     AddComponent<Components::CircleCollider2D>();
+    AddComponent<Components::Rigidbody2D>();
 }
 
 void SDLPhysicsApp::GameObjects::BasicCircle::Start()

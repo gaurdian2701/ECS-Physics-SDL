@@ -16,7 +16,9 @@ add_executable(
         "include/GameObjects/BasicSquare.h"
         src/GameObjects/BasicSquare.cpp
         include/GameObjects/BasicCircle.h
-        src/GameObjects/BasicCircle.cpp)
+        src/GameObjects/BasicCircle.cpp
+        include/GameObjects/StaticBox.h
+        src/GameObjects/StaticBox.cpp)
 
 set_target_properties(
         ${EXE_NAME} PROPERTIES
