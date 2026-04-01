@@ -23,8 +23,8 @@ void App::GameScenes::TestScene::Start()
     auto rb1 = m_sq1->GetComponent<Components::Rigidbody2D>();
     auto rb2 = m_sq2->GetComponent<Components::Rigidbody2D>();
 
-    rb1->Velocity = glm::vec2(200.0f, 0.0f);
-    rb2->Velocity = glm::vec2(-200.0f, 0.0f);
+    rb1->LinearVelocity = glm::vec2(100.0f, 0.0f);
+    rb2->LinearVelocity = glm::vec2(-100.0f, 0.0f);
 }
 
 void App::GameScenes::TestScene::Update(const float deltaTime)
