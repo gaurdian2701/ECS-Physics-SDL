@@ -21,5 +21,6 @@ namespace App::GameScenes
     private:
         SDLPhysicsApp::GameObjects::BasicSquare* m_sq1 = nullptr;
         SDLPhysicsApp::GameObjects::BasicSquare* m_sq2 = nullptr;
+        SDLPhysicsApp::GameObjects::BasicSquare* m_sq3 = nullptr;
     };
 }
