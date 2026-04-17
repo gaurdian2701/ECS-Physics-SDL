@@ -1,5 +1,5 @@
 ﻿#include "GameObjects/BasicSquare.h"
-#include "Components/BoxCollider2D.h"
+#include "Components/PolygonCollider2D.h"
 #include "Components/ParticleEmitter.h"
 #include "Components/Renderer2D.h"
 #include "Components/Rigidbody2D.h"
@@ -11,7 +11,7 @@ void SDLPhysicsApp::GameObjects::BasicSquare::AddComponentsBeforeStartup()
 {
     AddComponent<Components::Transform>();
     AddComponent<Components::Renderer2D>();
-    AddComponent<Components::BoxCollider2D>();
+    AddComponent<Components::PolygonCollider2D>();
     AddComponent<Components::Rigidbody2D>();
 }
 
@@ -20,8 +20,8 @@ void SDLPhysicsApp::GameObjects::BasicSquare::Start()
     auto transform = GetComponent<Components::Transform>();
     transform->Scale = glm::vec2(100.0f);
 
-    auto box = GetComponent<Components::BoxCollider2D>();
-    box->Initialize(transform->Position,
+    auto box = GetComponent<Components::PolygonCollider2D>();
+    box->InitializeBox(transform->Position,
         glm::vec2(transform->Scale * 0.6f),
         0.0f);
 
@@ -29,7 +29,6 @@ void SDLPhysicsApp::GameObjects::BasicSquare::Start()
     renderer->Color = SDL_FColor{50, 130, 240, 100};
     renderer->RenderTexture = GetSceneReference().GetResourceManager().TryLoadAndGetTexture(
         SQUARE_TEXTURE_FILEPATH);
-
 #ifdef _DEBUG
     m_name = "Square";
 #endif

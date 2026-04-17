@@ -1,5 +1,5 @@
 ﻿#include "GameObjects/BasicCircle.h"
-#include "Components/BoxCollider2D.h"
+#include "Components/PolygonCollider2D.h"
 #include "Components/CircleCollider2D.h"
 #include "Components/Renderer2D.h"
 #include "Components/Rigidbody2D.h"
@@ -28,7 +28,7 @@ void SDLPhysicsApp::GameObjects::BasicCircle::Start()
     CIRCLE_TEXTURE_FILEPATH);
 
     auto circleCollider = GetComponent<Components::CircleCollider2D>();
-    circleCollider->Radius = transform->Scale.x * 0.6f;
+    circleCollider->Initialize(transform->Position, transform->Scale.x * 0.6f);
 
 #ifdef _DEBUG
     m_name = "Circle";

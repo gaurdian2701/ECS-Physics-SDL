@@ -14,6 +14,6 @@ namespace SDLPhysicsApp::GameObjects
         void Update(const float deltaTime) override;
 
     private:
-        float m_accelerationForce = 1.0f;
+        float m_accelerationForce = 100.0f;
     };
 }

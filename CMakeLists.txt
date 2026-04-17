@@ -15,8 +15,7 @@ add_executable(
             ${CMAKE_CURRENT_SOURCE_DIR}/src/GameScenes/TestScene.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/src/GameObjects/BasicSquare.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/src/GameObjects/BasicCircle.cpp
-        include/GameObjects/ControlSquare.h
-        src/GameObjects/ControlSquare.cpp)
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/GameObjects/ControlSquare.cpp)
 
 set_target_properties(
         ${EXE_NAME} PROPERTIES
