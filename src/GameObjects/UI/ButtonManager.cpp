@@ -26,12 +26,12 @@ void App::GameObjects::ButtonManager::CheckForInput()
 
 	if (m_selectedButtonIndex != 0)
 	{
-		if (Core::Input::InputSystem::GetInstance().CheckForKeyPress(SDL_SCANCODE_SPACE))
+		if (Core::Input::InputSystem::GetInstance().IsKeyPressed(SDL_SCANCODE_SPACE))
 		{
 			m_selectedButton->OnClick();
 		}
 
-		if (Core::Input::InputSystem::GetInstance().CheckForKeyPress(SDL_SCANCODE_DOWN))
+		if (Core::Input::InputSystem::GetInstance().IsKeyPressed(SDL_SCANCODE_DOWN))
 		{
 			m_selectedButtonIndex++;
 			if (m_selectedButtonIndex == 0)
@@ -40,7 +40,7 @@ void App::GameObjects::ButtonManager::CheckForInput()
 			}
 		}
 		
-		if (Core::Input::InputSystem::GetInstance().CheckForKeyPress(SDL_SCANCODE_UP))
+		if (Core::Input::InputSystem::GetInstance().IsKeyPressed(SDL_SCANCODE_UP))
 		{
 			m_selectedButtonIndex--;
 			if (m_selectedButtonIndex == 0)

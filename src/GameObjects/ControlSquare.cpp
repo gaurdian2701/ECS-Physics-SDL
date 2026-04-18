@@ -35,23 +35,22 @@ void SDLPhysicsApp::GameObjects::ControlSquare::Update(const float deltaTime)
 {
     auto transform = GetComponent<Components::Transform>();
 
-    if (Core::Input::InputSystem::GetInstance().CheckForKeyPress(SDL_SCANCODE_UP))
+    if (Core::Input::InputSystem::GetInstance().IsKeyPressed(SDL_SCANCODE_UP))
     {
         transform->Position += glm::vec2(0.0f, m_accelerationForce) * deltaTime;
     }
-    if (Core::Input::InputSystem::GetInstance().CheckForKeyPress(SDL_SCANCODE_DOWN))
+    if (Core::Input::InputSystem::GetInstance().IsKeyPressed(SDL_SCANCODE_DOWN))
     {
         transform->Position += glm::vec2(0.0f, -m_accelerationForce) * deltaTime;
     }
-    if (Core::Input::InputSystem::GetInstance().CheckForKeyPress(SDL_SCANCODE_LEFT))
+    if (Core::Input::InputSystem::GetInstance().IsKeyPressed(SDL_SCANCODE_LEFT))
     {
         transform->Position += glm::vec2(-m_accelerationForce, 0.0f) * deltaTime;
     }
-    if (Core::Input::InputSystem::GetInstance().CheckForKeyPress(SDL_SCANCODE_RIGHT))
+    if (Core::Input::InputSystem::GetInstance().IsKeyPressed(SDL_SCANCODE_RIGHT))
     {
         transform->Position += glm::vec2(m_accelerationForce, 0.0f) * deltaTime;
     }
-
 }
 
 

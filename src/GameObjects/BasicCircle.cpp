@@ -19,7 +19,6 @@ void SDLPhysicsApp::GameObjects::BasicCircle::AddComponentsBeforeStartup()
 void SDLPhysicsApp::GameObjects::BasicCircle::Start()
 {
     auto transform = GetComponent<Components::Transform>();
-    transform->Position = glm::vec2(20.0f, 0.0f);
     transform->Scale = glm::vec2(25.0f);
 
     auto renderer = GetComponent<Components::Renderer2D>();
@@ -30,8 +29,6 @@ void SDLPhysicsApp::GameObjects::BasicCircle::Start()
     auto circleCollider = GetComponent<Components::CircleCollider2D>();
     circleCollider->Initialize(transform->Position, transform->Scale.x * 0.6f);
 
-#ifdef _DEBUG
-    m_name = "Circle";
-#endif
+    DoDebugStatement(m_name = "Circle");
 }
 

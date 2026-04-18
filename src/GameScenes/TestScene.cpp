@@ -11,8 +11,6 @@ void App::GameScenes::TestScene::CreateGameObjects()
     m_sq1 = AddGameObject<SDLPhysicsApp::GameObjects::BasicSquare>();
     m_sq2 = AddGameObject<SDLPhysicsApp::GameObjects::BasicSquare>();
     m_sq3 = AddGameObject<SDLPhysicsApp::GameObjects::BasicSquare>();
-    AddGameObject<SDLPhysicsApp::GameObjects::ControlSquare>();
-    AddGameObject<SDLPhysicsApp::GameObjects::BasicCircle>();
 }
 
 void App::GameScenes::TestScene::Start()
@@ -30,12 +28,12 @@ void App::GameScenes::TestScene::Update(const float deltaTime)
 {
     GameScene::Update(deltaTime);
 
-    if (Core::Input::InputSystem::GetInstance().CheckForKeyPress(SDL_SCANCODE_B))
+    if (Core::Input::InputSystem::GetInstance().IsKeyPressed(SDL_SCANCODE_B))
     {
         auto sq = AddGameObject<SDLPhysicsApp::GameObjects::BasicSquare>();
         sq->GetComponent<Components::Transform>()->Position = GetMouseWorldCoords();
     }
-    if (Core::Input::InputSystem::GetInstance().CheckForKeyPress(SDL_SCANCODE_C))
+    if (Core::Input::InputSystem::GetInstance().IsKeyPressed(SDL_SCANCODE_C))
     {
         auto circle = AddGameObject<SDLPhysicsApp::GameObjects::BasicCircle>();
         circle->GetComponent<Components::Transform>()->Position = GetMouseWorldCoords();

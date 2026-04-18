@@ -29,9 +29,8 @@ void SDLPhysicsApp::GameObjects::BasicSquare::Start()
     renderer->Color = SDL_FColor{50, 130, 240, 100};
     renderer->RenderTexture = GetSceneReference().GetResourceManager().TryLoadAndGetTexture(
         SQUARE_TEXTURE_FILEPATH);
-#ifdef _DEBUG
-    m_name = "Square";
-#endif
+
+    DoDebugStatement(m_name = "Basic Square");
 }
 
 void SDLPhysicsApp::GameObjects::BasicSquare::Update(const float deltaTime)
