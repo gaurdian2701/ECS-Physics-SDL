@@ -24,7 +24,7 @@ void App::GameScenes::TestScene::Start()
     m_sq3->GetComponent<Components::Transform>()->Position = glm::vec2(0.0f, -300.0f);
     m_sq3->GetComponent<Components::Transform>()->Scale = glm::vec2(1000.0f, 10.0f);
     m_sq3->GetComponent<Components::Rigidbody2D>()->SetIsStatic(true);
-    m_sq3->GetComponent<Components::PolygonCollider2D>()->SetBoxHalfExtents(glm::vec2(m_sq3->GetComponent<Components::Transform>()->Scale));
+    m_sq3->GetComponent<Components::PolygonCollider2D>()->SetBoxHalfExtents(glm::vec2(m_sq3->GetComponent<Components::Transform>()->Scale * 0.5f));
 }
 
 void App::GameScenes::TestScene::Update(const float deltaTime)

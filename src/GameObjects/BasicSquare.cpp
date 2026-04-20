@@ -22,7 +22,7 @@ void SDLPhysicsApp::GameObjects::BasicSquare::Start()
 
     auto box = GetComponent<Components::PolygonCollider2D>();
     box->InitializeBox(transform->Position,
-        glm::vec2(transform->Scale * 0.6f),
+        glm::vec2(transform->Scale * 0.5f),
         0.0f);
 
     auto renderer = GetComponent<Components::Renderer2D>();

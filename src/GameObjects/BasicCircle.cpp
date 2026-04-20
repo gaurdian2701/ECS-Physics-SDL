@@ -27,6 +27,7 @@ void SDLPhysicsApp::GameObjects::BasicCircle::Start()
     CIRCLE_TEXTURE_FILEPATH);
 
     auto circleCollider = GetComponent<Components::CircleCollider2D>();
+    circleCollider->MatchScaleWithTransform = false;
     circleCollider->Initialize(transform->Position, transform->Scale.x * 0.6f);
 
     DoDebugStatement(m_name = "Circle");
