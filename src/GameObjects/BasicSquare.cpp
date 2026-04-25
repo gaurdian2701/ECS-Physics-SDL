@@ -27,8 +27,12 @@ void SDLPhysicsApp::GameObjects::BasicSquare::Start()
 
     auto renderer = GetComponent<Components::Renderer2D>();
     renderer->Color = SDL_FColor{50, 130, 240, 100};
-    renderer->RenderTexture = GetSceneReference().GetResourceManager().TryLoadAndGetTexture(
-        SQUARE_TEXTURE_FILEPATH);
+    // renderer->RenderTexture = GetSceneReference().GetResourceManager().TryLoadAndGetTexture(
+    //     SQUARE_TEXTURE_FILEPATH);
+
+    auto rigidbody = GetComponent<Components::Rigidbody2D>();
+    rigidbody->SetMass(100.0f);
+    rigidbody->Restitution = 0.5f;
 
     DoDebugStatement(m_name = "Basic Square");
 }

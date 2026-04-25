@@ -6,7 +6,7 @@
 #include "Components/Transform.h"
 
 
-const inline std::string CIRCLE_TEXTURE_FILEPATH = "images/img_blankCircle.png";
+const inline std::string CIRCLE_TEXTURE_FILEPATH = "images/img_arrow.png";
 
 void SDLPhysicsApp::GameObjects::BasicCircle::AddComponentsBeforeStartup()
 {
