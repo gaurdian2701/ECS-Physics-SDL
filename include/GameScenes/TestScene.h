@@ -3,6 +3,11 @@
 
 namespace SDLPhysicsApp::GameObjects
 {
+    class BasicPolygon;
+}
+
+namespace SDLPhysicsApp::GameObjects
+{
     class BasicSquare;
 }
 

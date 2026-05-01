@@ -16,7 +16,7 @@ void PhysicsApp::InitializeAppSystems()
 
 void PhysicsApp::StartGame()
 {
-    m_scene = GetSceneManager().CreateScene<App::GameScenes::TestScene, 100>();
+    m_scene = GetSceneManager().CreateScene<App::GameScenes::TestScene, 1000>();
     m_scene->InitializeScene();
     m_scene->Start();
 }

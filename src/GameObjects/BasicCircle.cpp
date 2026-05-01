@@ -6,7 +6,7 @@
 #include "Components/Transform.h"
 
 
-const inline std::string CIRCLE_TEXTURE_FILEPATH = "images/img_arrow.png";
+const inline std::string CIRCLE_TEXTURE_FILEPATH = "images/img_circle.png";
 
 void SDLPhysicsApp::GameObjects::BasicCircle::AddComponentsBeforeStartup()
 {
@@ -19,17 +19,17 @@ void SDLPhysicsApp::GameObjects::BasicCircle::AddComponentsBeforeStartup()
 void SDLPhysicsApp::GameObjects::BasicCircle::Start()
 {
     auto transform = GetComponent<Components::Transform>();
-    transform->Scale = glm::vec2(25.0f);
+    transform->Scale = glm::vec2(100.0f);
 
     auto renderer = GetComponent<Components::Renderer2D>();
-    renderer->Color = SDL_FColor{50, 130, 240, 255};
+    renderer->Color = SDL_FColor{173, 216, 230, 255};
     renderer->RenderTexture = GetSceneReference().GetResourceManager().TryLoadAndGetTexture(
     CIRCLE_TEXTURE_FILEPATH);
 
     auto circleCollider = GetComponent<Components::CircleCollider2D>();
     circleCollider->MatchScaleWithTransform = false;
-    circleCollider->Initialize(transform->Position, transform->Scale.x * 0.6f);
+    circleCollider->Initialize(transform->Position, transform->Scale.x * 0.5f);
 
-    DoDebugStatement(m_name = "Circle");
+    DoDebug(m_name = "Circle");
 }
 
