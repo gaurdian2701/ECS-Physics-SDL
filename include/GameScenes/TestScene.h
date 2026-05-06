@@ -4,11 +4,12 @@
 namespace SDLPhysicsApp::GameObjects
 {
     class BasicPolygon;
+    class BasicSquare;
 }
 
-namespace SDLPhysicsApp::GameObjects
+namespace App::GameObjects
 {
-    class BasicSquare;
+    class UIText;
 }
 
 namespace App::GameScenes
