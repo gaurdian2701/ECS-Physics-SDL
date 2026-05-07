@@ -16,12 +16,9 @@ add_executable(
             ${CMAKE_CURRENT_SOURCE_DIR}/src/GameObjects/BasicSquare.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/src/GameObjects/BasicCircle.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/src/GameObjects/ControlSquare.cpp
-        include/GameObjects/BasicPolygon.h
-        src/GameObjects/BasicPolygon.cpp
-        include/GameObjects/TimeStepText.h
-        src/GameObjects/TimeStepText.cpp
-        include/GameObjects/EntityCountText.h
-        src/GameObjects/EntityCountText.cpp)
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/GameObjects/BasicPolygon.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/GameObjects/TimeStepText.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/GameObjects/EntityCountText.cpp)
 
 set_target_properties(
         ${EXE_NAME} PROPERTIES

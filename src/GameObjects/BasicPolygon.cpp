@@ -4,7 +4,7 @@
 #include "Components/Rigidbody2D.h"
 #include "Components/Transform.h"
 
-const inline std::string TRIANGLE_TEXTURE_FILEPATH = "images/img_blank.png";
+const inline std::string POLYGON_TEXTURE_FILEPATH = "images/img_woodenBox.png";
 
 
 void SDLPhysicsApp::GameObjects::BasicPolygon::AddComponentsBeforeStartup()
@@ -12,6 +12,7 @@ void SDLPhysicsApp::GameObjects::BasicPolygon::AddComponentsBeforeStartup()
     AddComponent<Components::Transform>();
     AddComponent<Components::PolygonCollider2D>();
     AddComponent<Components::Rigidbody2D>();
+    AddComponent<Components::Renderer2D>();
 }
 
 void SDLPhysicsApp::GameObjects::BasicPolygon::Start()
@@ -24,6 +25,12 @@ void SDLPhysicsApp::GameObjects::BasicPolygon::Start()
         m_NumberOfVertices,
         glm::length(transform->Scale) * 0.5f,
         0.0f);
+
+
+    auto renderer = GetComponent<Components::Renderer2D>();
+    renderer->Color = SDL_FColor{173, 216, 230, 255};
+    renderer->RenderTexture = GetSceneReference().GetResourceManager().TryLoadAndGetTexture(
+    POLYGON_TEXTURE_FILEPATH);
 
     auto rigidbody = GetComponent<Components::Rigidbody2D>();
     rigidbody->SetMass(1000.0f);
