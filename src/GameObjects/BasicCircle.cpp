@@ -4,6 +4,7 @@
 #include "Components/Renderer2D.h"
 #include "Components/Rigidbody2D.h"
 #include "Components/Transform.h"
+#include "Core/CoreSystems/ResourceManager.h"
 
 
 const inline std::string CIRCLE_TEXTURE_FILEPATH = "images/img_circle.png";

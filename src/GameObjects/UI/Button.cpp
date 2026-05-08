@@ -2,6 +2,7 @@
 #include "Components/Renderer2D.h"
 #include "Components/Transform.h"
 #include "Components/UITexture.h"
+#include "Core/CoreSystems/ResourceManager.h"
 
 const inline std::string BLANK_IMAGE_FILEPATH = "images/img_blank.png";
 

@@ -1,5 +1,4 @@
 ﻿#include "GameScenes/TestScene.h"
-
 #include "Components/PolygonCollider2D.h"
 #include "Components/Rigidbody2D.h"
 #include "Components/Transform.h"
@@ -7,10 +6,8 @@
 #include "GameObjects/BasicCircle.h"
 #include "GameObjects/BasicSquare.h"
 #include "GameObjects/BasicPolygon.h"
-#include "GameObjects/ControlSquare.h"
 #include "GameObjects/EntityCountText.h"
 #include "GameObjects/TimeStepText.h"
-#include "GameObjects/UI/UIText.h"
 
 void App::GameScenes::TestScene::CreateGameObjects()
 {

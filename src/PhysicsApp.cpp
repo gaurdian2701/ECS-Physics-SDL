@@ -28,6 +28,7 @@ void PhysicsApp::UpdateApplication(const float deltaTime)
 
 void PhysicsApp::EndApplication()
 {
+    m_scene->ShutdownSceneImmediate();
     m_isRunning = false;
 }
 

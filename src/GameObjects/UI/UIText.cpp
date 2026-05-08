@@ -1,6 +1,7 @@
 ﻿#include "GameObjects/UI/UIText.h"
 #include "Components/Transform.h"
 #include "Components/UITexture.h"
+#include "Core/CoreSystems/ResourceManager.h"
 
 const inline std::string TEXT_FONT_PATH = "fonts/font_Arcade.ttf";
 
